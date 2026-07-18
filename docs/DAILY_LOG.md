@@ -34,3 +34,31 @@ None.
 
 Define and validate the prediction target, then document the target logic clearly.
 
+## Day 2 — Define and Validate the Prediction Target
+
+**Date:** July 18, 2026
+
+### Completed
+
+- Reviewed `loan_status`, `outcome_group`, and `default_flag`.
+- Confirmed `final_good` maps to `default_flag = 0`.
+- Confirmed `final_bad` maps to `default_flag = 1`.
+- Confirmed zero unexpected target rows.
+- Confirmed the target columns agree for every record.
+- Added automated assertions for target validation.
+
+### Concepts Learned
+
+- Business outcome versus machine-learning target
+- Binary target encoding
+- Target consistency validation
+- Reproducible assertions
+- Why unresolved loan statuses should not be training labels
+
+### Blockers
+
+None.
+
+### Next Session
+
+Separate origination-time features from post-loan fields and audit the dataset for leakage.
