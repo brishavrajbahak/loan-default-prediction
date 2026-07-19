@@ -62,3 +62,37 @@ None.
 ### Next Session
 
 Separate origination-time features from post-loan fields and audit the dataset for leakage.
+
+## Day 3 — Leakage Audit and PostgreSQL Setup
+
+**Date:** July 19, 2026
+
+### Completed
+
+- Created the approved origination-time feature list.
+- Created the excluded-feature list.
+- Confirmed the target is separate from the input features.
+- Passed the automated leakage audit.
+- Created `data/processed/modeling_dataset.csv`.
+- Created the PostgreSQL database `loan_default_prediction`.
+- Created the `analytics.loan_modeling` table.
+- Imported the modeling dataset through DBeaver.
+- Confirmed no missing values in the checked database columns.
+- Saved `sql/01_import_validation.sql`.
+
+### Concepts Learned
+
+- Data leakage
+- Feature boundaries
+- Target versus input features
+- PostgreSQL schemas and tables
+- Import validation with SQL
+- Reproducible SQL audit trails
+
+### Blockers
+
+The first leakage assertion included the target column by mistake. It was corrected by checking only the input features.
+
+### Next Session
+
+Explore default-rate patterns across the approved features.
