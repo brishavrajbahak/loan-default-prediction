@@ -96,3 +96,33 @@ The first leakage assertion included the target column by mistake. It was correc
 ### Next Session
 
 Explore default-rate patterns across the approved features.
+## Day 4 — Feature Exploration
+
+**Date:** July 20, 2026
+
+### Completed
+
+- Created DTI, income, and interest-rate analysis bands.
+- Built a reusable default-rate summary function.
+- Analyzed default rate by grade and sub-grade.
+- Analyzed default rate by DTI band, interest-rate band, loan term, income band, purpose, and issue year.
+- Added charts using Matplotlib and Seaborn.
+- Added evidence-based observations to the feature-exploration notebook.
+- Documented that these are associations, not causal conclusions.
+
+### Concepts Learned
+
+- Feature engineering for analysis
+- Binning continuous variables
+- Grouped default-rate calculations
+- Sample-size-aware interpretation
+- Matplotlib and Seaborn visualization
+- Association versus causation
+
+### Blockers
+
+None.
+
+### Next Session
+
+Create a time-based train, validation, and test split without future-data leakage.
