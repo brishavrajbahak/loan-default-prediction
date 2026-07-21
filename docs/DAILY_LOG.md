@@ -126,3 +126,31 @@ None.
 ### Next Session
 
 Create a time-based train, validation, and test split without future-data leakage.
+
+
+## Day 5 — Time-Based Data Split
+
+**Date:** July 21, 2026
+
+### Completed
+
+- Created a chronological train, validation, and test split.
+- Used 2007–2015 for training.
+- Used 2016–2017 for validation.
+- Used 2018 for final testing.
+- Confirmed the test set contains only 2018 loans.
+- Confirmed split sizes add up to the complete dataset.
+- Confirmed no row overlap between the splits.
+- Separated input features from `default_flag`.
+
+### Concepts Learned
+
+- Temporal validation
+- Future-data leakage
+- Train, validation, and test roles
+- Feature-target separation
+- Target-rate drift across time
+
+### Next Session
+
+Build a dummy baseline and logistic-regression pipeline.
