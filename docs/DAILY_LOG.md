@@ -154,3 +154,41 @@ Create a time-based train, validation, and test split without future-data leakag
 ### Next Session
 
 Build a dummy baseline and logistic-regression pipeline.
+
+## Day 6 — Baseline and Logistic Models
+
+**Date:** July 22, 2026
+
+### Completed
+
+- Created `notebooks/04_baseline_models.ipynb`.
+- Recreated the chronological train, validation, and test splits.
+- Separated input features from `default_flag`.
+- Identified numeric and categorical features.
+- Built a preprocessing pipeline with imputation, scaling, and one-hot encoding.
+- Trained a majority-class dummy baseline.
+- Trained a balanced logistic-regression model.
+- Evaluated accuracy, precision, recall, F1-score, and ROC-AUC.
+- Generated and interpreted the logistic-regression confusion matrix.
+
+### Results
+
+- Dummy accuracy: 76.77%
+- Dummy recall: 0.00
+- Logistic accuracy: 61.57%
+- Logistic precision: 33.98%
+- Logistic recall: 69.40%
+- Logistic F1-score: 0.4562
+- Logistic ROC-AUC: 0.697
+
+### Key Finding
+
+The dummy model achieves higher accuracy by predicting only the majority good-loan class, but it detects no bad loans. Logistic regression has lower accuracy but identifies substantially more bad loans. This shows why recall, precision, F1-score, and ROC-AUC are more informative than accuracy alone for this imbalanced classification problem.
+
+### Blockers
+
+The first logistic-regression run reached the iteration limit. Increasing `max_iter` and adjusting `tol` resolved the convergence warning.
+
+### Next Session
+
+Train and compare a decision tree and random forest.
