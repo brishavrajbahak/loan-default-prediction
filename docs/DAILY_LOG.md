@@ -192,3 +192,46 @@ The first logistic-regression run reached the iteration limit. Increasing `max_i
 ### Next Session
 
 Train and compare a decision tree and random forest.
+
+## Day 7 — Tree-Based Models
+
+**Date:** July 23, 2026
+
+### Completed
+
+- Created `notebooks/05_tree_models.ipynb`.
+- Recreated the chronological data splits.
+- Built tree-model preprocessing for numeric and categorical features.
+- Trained a decision tree.
+- Trained a random forest.
+- Evaluated both models using accuracy, precision, recall, F1-score, and ROC-AUC.
+- Detected and corrected target leakage caused by including `default_flag` in the feature list.
+- Retrained both models after separating the target correctly.
+
+### Results
+
+| Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Decision tree | 0.6208 | 0.3405 | 0.6749 | 0.4526 | 0.6944 |
+| Random forest | 0.6328 | 0.3482 | 0.6664 | 0.4574 | 0.6989 |
+
+### Key Finding
+
+After correcting target leakage, performance became realistic. Random forest is currently the strongest balanced candidate based on F1-score and ROC-AUC. Logistic regression remains competitive and provides higher recall.
+
+### Concepts Learned
+
+- Decision trees
+- Random forests
+- Ensemble modeling
+- Target leakage detection
+- Model comparison
+- Precision-recall trade-offs
+
+### Blockers
+
+The first model results were artificially perfect because `default_flag` was accidentally included in the input features. The feature-target separation was corrected and both models were retrained.
+
+### Next Session
+
+Perform formal model evaluation and compare all models on validation and test data.
