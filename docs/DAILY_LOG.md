@@ -235,3 +235,51 @@ The first model results were artificially perfect because `default_flag` was acc
 ### Next Session
 
 Perform formal model evaluation and compare all models on validation and test data.
+
+## Day 8 — Evaluation and Explainability
+
+**Date:** July 24, 2026
+
+### Completed
+
+- Evaluated the decision tree and random forest on the untouched 2018 test set.
+- Corrected the decision-tree ROC-AUC calculation so it uses the matching test probabilities.
+- Generated confusion matrices for both tree models.
+- Generated ROC curves and precision-recall curves.
+- Calculated average precision for both models.
+- Extracted random-forest feature importances from the encoded features.
+- Aggregated encoded importances back to the original business features.
+- Documented that feature importance indicates predictive usefulness, not causation.
+
+### Results
+
+| Model | Accuracy | Precision | Recall | F1 | ROC-AUC | Average Precision |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Decision tree - 2018 test | 0.5948 | 0.2335 | 0.6882 | 0.3486 | 0.6840 | 0.27 |
+| Random forest - 2018 test | 0.6206 | 0.2428 | 0.6645 | 0.3557 | 0.6912 | 0.28 |
+
+### Key Findings
+
+- Random forest is the stronger overall candidate on the 2018 test set, with the highest accuracy, F1-score, ROC-AUC, and average precision.
+- The decision tree has slightly higher recall, so it identifies more bad loans but also produces more false positives.
+- The strongest aggregated random-forest features are interest rate (29.84%), grade (24.66%), term (18.69%), and sub-grade (10.66%).
+- Grade and sub-grade are related credit-risk variables; their combined importance is approximately 35.33% and should not be treated as independent causal effects.
+- Both models have only moderate ranking performance, so the results are useful for risk segmentation and further investigation, not automatic lending decisions.
+
+### Concepts Learned
+
+- Holdout test evaluation
+- Confusion-matrix interpretation
+- ROC-AUC and average precision
+- Precision-recall trade-offs
+- Encoded-feature importance
+- Aggregating model importance to original features
+- Predictive association versus causation
+
+### Blockers
+
+The first test-results table displayed the wrong decision-tree ROC-AUC because the probability variable did not match the model. The metric was recalculated using the correct test probabilities.
+
+### Next Session
+
+Perform error analysis by examining false positives and false negatives across grade, term, DTI, income, and other risk segments.
