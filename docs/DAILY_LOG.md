@@ -283,3 +283,42 @@ The first test-results table displayed the wrong decision-tree ROC-AUC because t
 ### Next Session
 
 Perform error analysis by examining false positives and false negatives across grade, term, DTI, income, and other risk segments.
+
+## Day 9 — Error Analysis
+
+**Date:** July 25, 2026
+
+### Completed
+
+- Created an error-analysis table for random-forest predictions on the 2018 test set.
+- Classified predictions as true positives, true negatives, false positives, or false negatives.
+- Compared model errors across grade, DTI band, loan term, and income band.
+- Calculated segment-level false-positive and false-negative rates.
+- Treated unusually high DTI values as a separate `Special/Invalid` data-quality group.
+- Documented model behaviour separately from causal borrower-risk conclusions.
+
+### Key Findings
+
+- The random forest produced 29,055 true negatives, 18,389 false positives, 5,897 true positives, and 2,977 false negatives on the 2018 test set.
+- Grades A and B had high false-negative rates, while grades C through G had high false-positive rates.
+- False-positive rates increased with DTI, from 21.05% in the 0–10 band to 48.19% in the 30+ band. False-negative rates decreased from 44.45% to 19.27%.
+- 36-month loans had a higher false-negative rate of 47.86%, while 60-month loans had a higher false-positive rate of 58.89%.
+- Borrowers below 30k income had the highest false-positive rate at 37.38%. Borrowers earning 100k+ had the highest false-negative rate at 42.15%.
+
+### Concepts Learned
+
+- Confusion-matrix error categories
+- False-positive and false-negative rates
+- Segment-level error analysis
+- Count-based versus rate-based comparisons
+- Temporary analytical bands
+- Data-quality segments and special values
+- Model behaviour versus causal interpretation
+
+### Blockers
+
+The raw DTI column contained many unique values, so it was unsuitable for direct grouped analysis. Temporary DTI bands were created, with unusually high values separated as `Special/Invalid`.
+
+### Next Session
+
+Build a simple Streamlit interface that loads the trained pipeline and allows users to enter loan details and view a model risk estimate.
