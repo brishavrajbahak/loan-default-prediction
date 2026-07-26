@@ -64,6 +64,10 @@ python -m streamlit run app.py
 
 The app accepts origination-time loan details and displays an estimated probability of a bad outcome. Grade and sub-grade use dependent selections so invalid combinations cannot be entered.
 
+### Live Demo
+
+[Open the deployed Loan Default Risk Predictor](https://brishav-loan-default-prediction.streamlit.app/)
+
 ### Screenshots
 
 ![Higher-risk prediction](reports/screenshots/Screenshot%202026-07-26%20100842.png)
