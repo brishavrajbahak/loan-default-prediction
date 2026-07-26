@@ -53,6 +53,25 @@ The model will exclude loan-status fields, payment history, recoveries, collecti
 9. Build a Streamlit interface
 10. Deploy the application
 
+## Streamlit Demo
+
+Run the application locally from the repository root:
+
+```powershell
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+The app accepts origination-time loan details and displays an estimated probability of a bad outcome. Grade and sub-grade use dependent selections so invalid combinations cannot be entered.
+
+### Screenshots
+
+![Higher-risk prediction](reports/screenshots/Screenshot%202026-07-26%20100842.png)
+
+![Lower-risk prediction](reports/screenshots/Screenshot%202026-07-26%20101131.png)
+
+![Streamlit input form](reports/screenshots/Screenshot%202026-07-26%20101320.png)
+
 ## Tools
 
 Python, pandas, scikit-learn, PostgreSQL, SQL, Power BI, Streamlit, Git, and GitHub.
@@ -63,9 +82,10 @@ Python, pandas, scikit-learn, PostgreSQL, SQL, Power BI, Streamlit, Git, and Git
 data/          Dataset files kept locally
 notebooks/     Reproducible analysis notebooks
 src/           Reusable Python code
-app/           Streamlit application
-model/         Saved model artifacts kept locally
+app.py         Streamlit application
+models/        Saved model artifacts
 docs/          Daily logs and project documentation
+reports/       Screenshots and project outputs
 ```
 
 ## Important Limitation
@@ -74,6 +94,6 @@ This is an educational and retrospective analysis. It is not a production lendin
 
 ## Status
 
-Day 1 complete: repository initialization and dataset audit.
+Completed through the merged Day 10 milestone: dataset audit, target validation, leakage audit, PostgreSQL validation, feature exploration, time-based splitting, baseline and tree models, test evaluation, explainability, error analysis, and a working Streamlit application.
 
 Progress is recorded in [`docs/DAILY_LOG.md`](docs/DAILY_LOG.md).

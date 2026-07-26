@@ -322,3 +322,36 @@ The raw DTI column contained many unique values, so it was unsuitable for direct
 ### Next Session
 
 Build a simple Streamlit interface that loads the trained pipeline and allows users to enter loan details and view a model risk estimate.
+
+## Day 10 — Streamlit App, Documentation, and Deployment Preparation
+
+**Date:** July 26, 2026
+
+### Completed
+
+- Created `app.py` as a Streamlit loan-default risk predictor.
+- Saved the complete random-forest pipeline to `models/random_forest_model.joblib`.
+- Added origination-time input fields matching the trained model features.
+- Added dependent Grade and Sub-grade selectors to prevent invalid combinations.
+- Tested a higher-risk scenario with an estimated bad-outcome probability of 73.1%.
+- Tested a lower-risk scenario with an estimated bad-outcome probability of 25.2%.
+- Added responsible-use messaging to the application.
+- Captured application screenshots in `reports/screenshots/`.
+- Updated `README.md` with application instructions, screenshots, and project status.
+
+### Concepts Learned
+
+- Loading a saved machine-learning pipeline
+- Connecting model inference to a Streamlit form
+- Dependent user-interface controls
+- Prediction probability versus predicted class
+- Local application testing
+- Reproducible project documentation
+
+### Blockers
+
+Streamlit was not initially available in the active Python environment. It was installed and launched successfully with `python -m streamlit`.
+
+### Next Session
+
+Confirm `requirements.txt`, commit and push the final project files, deploy the Streamlit application, test the public URL, and add the live demo link to the portfolio.
